@@ -13,6 +13,10 @@ data_path = os.path.join(base_dir, "Pandas",'data.csv')
 df = pd.read_csv(data_path)
 df2 = pd.DataFrame(df)
 
+x = df2["Calories"].median()
+
+df2.fillna({"Calories": x}, inplace=True)
+
 data_dir = 'data'
 os.makedirs(data_dir, exist_ok = True)
 
@@ -21,9 +25,7 @@ file_path = os.path.join(data_dir, 'sample.csv')
 df2.to_csv(file_path, index=False)
 
 print(f"Csv file saved to {file_path}")
-# x = df["Calories"].median()
 
-# df.fillna({"Calories": x}, inplace=True)
 # print(df.to_string())
 
 # df2 = pd.DataFrame(df)
