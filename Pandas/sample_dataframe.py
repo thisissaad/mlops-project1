@@ -17,6 +17,8 @@ x = df2["Calories"].median()
 
 df2.fillna({"Calories": x}, inplace=True)
 
+df2.drop_duplicates(inplace= True) 
+
 data_dir = 'data'
 os.makedirs(data_dir, exist_ok = True)
 
@@ -36,9 +38,7 @@ print(f"Csv file saved to {file_path}")
 # print(df.to_string())
 
 
-# for x in df.index:
-#     if df.loc[x, "Duration"] > 150:
-#         df.loc[x, "Duration"] = 150
+
 
 # print(df.to_string())        
 
